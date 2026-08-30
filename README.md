@@ -1,0 +1,68 @@
+# Sandustry Examples
+
+Sample mods for [SandustryModTemplate](https://github.com/sandustry-modding/SandustryModTemplate).
+
+In the template repository, run:
+
+```
+npm run examples
+```
+
+That command clones this repository into `examples/` when the folder is not present, then watches the sample mods.
+
+Do not build these folders as a standalone project. The template supplies `modkit/` and the build.
+
+Copy a folder from here to `src/<your-mod>/` in the template when you want that sample. Start a new mod from `src/template/` in the template. Each leaf folder is a separate game mod.
+
+On **0.5.5+**, prefer Sandkit hooks and `configOverrides` over bundle patches; [`collector-patches`](api/collector-patches/) is the remaining patch-rewrite sample.
+
+## UI
+
+| Folder                                       | What it shows                              |
+| -------------------------------------------- | ------------------------------------------ |
+| [`overlay-hotkey`](ui/overlay-hotkey/)       | React overlay + Tailwind (**Alt+E**)       |
+| [`management-button`](ui/management-button/) | Management-column row                      |
+| [`input-binding`](ui/input-binding/)         | `api.input.registerBinding` + bound-key UI |
+
+## Content
+
+| Folder                                                | What it shows                                      |
+| ----------------------------------------------------- | -------------------------------------------------- |
+| [`custom-element`](content/custom-element/)           | `api.elements.register` for one powder             |
+| [`collector-element`](content/collector-element/)     | Platinum + Collector admission patches             |
+| [`custom-terrain`](content/custom-terrain/)           | `api.terrains.register` for one terrain            |
+| [`element-reaction`](content/element-reaction/)       | `api.reactions.registerContact`                    |
+| [`register-structure`](content/register-structure/)   | `api.structures.register` + mod sprite             |
+| [`structure-processor`](content/structure-processor/) | `api.structures.processing.register` periodic loop |
+| [`mod-assets`](content/mod-assets/)                   | Static `mod/` files + `assets.getUrl`              |
+
+## API
+
+| Folder                                        | What it shows                              |
+| --------------------------------------------- | ------------------------------------------ |
+| [`events`](api/events/)                       | `api.events.on("game:ready")`              |
+| [`triggers-interval`](api/triggers-interval/) | `api.triggers.register` repeating callback |
+| [`hooks-intercept`](api/hooks-intercept/)     | `api.hooks.intercept` on `input:escape`    |
+| [`schedule-idle`](api/schedule-idle/)         | `schedule.nextTick` + `grid.mutate`        |
+| [`i18n`](api/i18n/)                           | `api.i18n.register` + `i18n.t`             |
+| [`storage`](api/storage/)                     | `api.storage.ensure` in the save file      |
+| [`sprites`](api/sprites/)                     | `api.sprites.loadFromMod` + `getById`      |
+| [`ui-prompt`](api/ui-prompt/)                 | `api.ui.prompt` text dialog                |
+| [`signal-target`](api/signal-target/)         | `api.signals.targets.register`             |
+| [`player-teleport`](api/player-teleport/)     | `api.player.setPositionAtWorld`            |
+| [`collector-patches`](api/collector-patches/) | Collector admission patches (`patches.ts`) |
+| [`worker-api`](api/worker-api/)               | Worker-thread `sandkit.api`                |
+| [`settings`](api/settings/)                   | All `configSchema` field types             |
+
+## Games
+
+| Folder                            | What it shows      |
+| --------------------------------- | ------------------ |
+| [`retro-game`](games/retro-game/) | Retro Console demo |
+
+Integration tests (`*.integration.test.ts`) run from the template with `npm run test:integration -- --examples`. Each sample folder has one. Pass the folder name to run one sample:
+
+```bash
+nr test:integration:view overlay-hotkey
+nr test:integration overlay-hotkey
+```
