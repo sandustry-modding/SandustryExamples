@@ -9,6 +9,8 @@ const COLLECTABLE_VALUE = 2;
 /** Fixed cell above the Empty.save platform, snap-grid aligned, 40 cells clear of the other examples. */
 const COLLECTOR_CELL = { x: 500, y: 508 };
 const CELL_SIZE = 4;
+/** Ticks to run after the Platinum lands on the Collector. */
+const COLLECT_TICKS = 60;
 /** Extra pause only for `:view` so steps stay readable on screen. */
 const VIEW_DELAY_MS = process.env.SANDUSTRY_TEST_VIEW === "1" ? 1500 : 0;
 const game = await setupGame();
@@ -95,20 +97,18 @@ describe("collector-element", { concurrency: false }, () => {
 
     await viewPause();
 
-    await game.resumeSimulation();
-    try {
-      const after = await game.waitFor(
-        () => {
-          const shared = sandkit.engine.state.shared as { gold: ArrayLike<number> };
-          return Number(shared.gold[0]);
-        },
-        (gold) => gold >= before + COLLECTABLE_VALUE,
-        { message: "collector did not add gold for Platinum", timeoutMs: 8000 },
-      );
-      assert.ok(after >= before + COLLECTABLE_VALUE);
-    } finally {
-      await game.pauseSimulation();
-    }
+    // Step the game rather than resuming it: the collector fires on a tick, so
+    // a fixed number of ticks is the same run on any machine.
+    await game.ticks(COLLECT_TICKS);
+
+    const after = await game.evaluate(() => {
+      const shared = sandkit.engine.state.shared as { gold: ArrayLike<number> };
+      return Number(shared.gold[0]);
+    });
+    assert.ok(
+      after >= before + COLLECTABLE_VALUE,
+      `collector added ${after - before} gold in ${COLLECT_TICKS} ticks, expected at least ${COLLECTABLE_VALUE}`,
+    );
 
     await viewPause();
   });
