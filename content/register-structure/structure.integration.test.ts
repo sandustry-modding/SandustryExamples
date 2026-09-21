@@ -5,8 +5,8 @@ import { setupGame } from "@modkit/test";
 const MOD_ID = "example.register-structure";
 const STRUCTURE_ID = `${MOD_ID}:beacon`;
 const SPRITE_ID = `${MOD_ID}:beacon-sprite`;
-/** Fixed Void-save cell on the Empty.save platform (snap-grid aligned). */
-const BEACON_CELL = { x: 2040, y: 1612 };
+/** Fixed cell above the Empty.save platform, snap-grid aligned, 40 cells clear of the other examples. */
+const BEACON_CELL = { x: 540, y: 508 };
 const game = await setupGame();
 
 describe("register-structure", { concurrency: false }, () => {
