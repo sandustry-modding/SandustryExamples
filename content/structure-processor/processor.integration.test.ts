@@ -5,8 +5,8 @@ import { setupGame } from "@modkit/test";
 const MOD_ID = "example.structure-processor";
 const STRUCTURE_ID = `${MOD_ID}:scanner`;
 const SPRITE_ID = `${MOD_ID}:scanner-sprite`;
-/** Fixed Void-save cell on the Empty.save platform (snap-grid aligned). */
-const SCANNER_CELL = { x: 2080, y: 1612 };
+/** Fixed cell above the Empty.save platform, snap-grid aligned, 40 cells clear of the other examples. */
+const SCANNER_CELL = { x: 580, y: 508 };
 const game = await setupGame();
 
 describe("structure-processor", { concurrency: false }, () => {

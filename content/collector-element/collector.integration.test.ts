@@ -6,8 +6,8 @@ import { setupGame } from "@modkit/test";
 const MOD_ID = "example.collector-element";
 const ELEMENT_ID = `${MOD_ID}:platinum`;
 const COLLECTABLE_VALUE = 2;
-/** Fixed Void-save cell on the Empty.save platform (snap-grid aligned). */
-const COLLECTOR_CELL = { x: 2000, y: 1612 };
+/** Fixed cell above the Empty.save platform, snap-grid aligned, 40 cells clear of the other examples. */
+const COLLECTOR_CELL = { x: 500, y: 508 };
 const CELL_SIZE = 4;
 /** Extra pause only for `:view` so steps stay readable on screen. */
 const VIEW_DELAY_MS = process.env.SANDUSTRY_TEST_VIEW === "1" ? 1500 : 0;
