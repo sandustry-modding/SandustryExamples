@@ -17,5 +17,3 @@ function registerExampleRow() {
 }
 
 registerExampleRow();
-
-console.log("loaded — Example row under Upgrades");

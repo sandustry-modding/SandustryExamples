@@ -7,5 +7,3 @@ api.hooks.intercept("input:escape", () => {
 });
 
 api.ui.toast("Hooks Intercept — input:escape hook registered", {});
-
-console.log(`loaded — hooks.intercept(input:escape) for ${modinfo.id}`);

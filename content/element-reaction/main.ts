@@ -13,5 +13,3 @@ api.reactions.registerContact({
 });
 
 api.ui.toast("Element Reaction — sand + water contact registered", {});
-
-console.log("loaded — reactions.registerContact(sand + water → wetSand)");

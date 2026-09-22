@@ -13,5 +13,3 @@ void fetch(INFO_URL)
   .catch((error) => {
     console.warn(`${modinfo.id} failed to load info.json`, error);
   });
-
-console.log(`loaded — badge at ${BADGE_URL}`);

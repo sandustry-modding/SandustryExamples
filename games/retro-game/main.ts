@@ -1,5 +1,3 @@
-import { registerRetroGame } from "@modkit/utils";
-
 const WIDTH = 160;
 const HEIGHT = 100;
 
@@ -10,7 +8,7 @@ function noise(x: number, y: number, seed: number): number {
 }
 
 function registerNoiseTest() {
-  const registered = registerRetroGame({
+  sandkit.engine.api.retroConsole.registerGame({
     id: "noise-test",
     name: "Noise Test",
     options: { width: WIDTH, height: HEIGHT },
@@ -43,10 +41,6 @@ function registerNoiseTest() {
       return { ...state, threshold, seed, animate };
     },
   });
-  if (!registered) return;
-  console.log(`Noise test registered at ${WIDTH}x${HEIGHT}`);
 }
 
 registerNoiseTest();
-
-console.log("loaded — open Retro Console for Noise Test");

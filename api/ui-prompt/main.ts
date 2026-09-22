@@ -19,5 +19,3 @@ api.input.registerBinding(BINDING_PROMPT, ["KeyU"], {
 const promptKey = api.input.getDisplayKey(BINDING_PROMPT, "U");
 
 api.ui.toast(`UI Prompt — press ${promptKey} to open a dialog`, {});
-
-console.log(`loaded — ui.prompt on binding ${BINDING_PROMPT} (${promptKey})`);

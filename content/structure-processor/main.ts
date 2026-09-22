@@ -45,9 +45,6 @@ async function main() {
   });
 
   api.ui.toast("Structure Processor — Debug → Building → Example Scanner", {});
-  console.log(
-    `loaded — structures.processing.register(${STRUCTURE_ID}) every ${PROCESS_INTERVAL_MS}ms`,
-  );
 }
 
 void main();

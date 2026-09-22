@@ -1,5 +1,4 @@
 import { safe } from "@modkit/utils";
-import modinfo from "./modinfo.json";
 
 const api = sandkit.api;
 
@@ -41,5 +40,3 @@ api.settings.onChange(() => {
   const next = readSettings();
   notify(`Settings changed — ${formatSnapshot(next)}`, next);
 });
-
-console.log(`loaded — edit Options → Mods → ${modinfo.name}`);

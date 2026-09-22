@@ -15,5 +15,3 @@ const { cellType } = api.terrains.register({
 api.discoveries.addTerrainByType(cellType);
 
 api.ui.toast("Custom Terrain — Debug → Terrain → Example Chalk", {});
-
-console.log(`loaded — terrains.register(${TERRAIN_ID}) cellType ${cellType}`);

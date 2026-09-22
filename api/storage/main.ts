@@ -9,5 +9,3 @@ bag.loadCount = loadCount;
 api.storage.set(modinfo.id, "lastLoadedAt", Date.now());
 
 api.ui.toast(`Storage — save load count ${loadCount}`, {});
-
-console.log(`loaded — storage.ensure(${modinfo.id})`, bag);

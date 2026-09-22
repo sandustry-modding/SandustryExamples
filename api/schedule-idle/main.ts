@@ -6,5 +6,3 @@ api.schedule.nextTick(() => {
     console.log("grid.mutate fired");
   });
 });
-
-console.log("loaded — schedule.nextTick + grid.mutate");

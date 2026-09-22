@@ -27,7 +27,6 @@ async function main() {
   });
 
   api.ui.toast("Register Structure — use Debug → Building to place the beacon", {});
-  console.log(`loaded — structures.register(${STRUCTURE_ID})`);
 }
 
 void main();

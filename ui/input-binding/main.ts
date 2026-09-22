@@ -17,7 +17,3 @@ api.input.registerBinding(BINDING_TOAST, ["KeyT"], {
 const toastKey = api.input.getDisplayKey(BINDING_TOAST, "T");
 
 api.ui.toast(`Input Binding — press ${toastKey} for a toast`, {});
-
-console.log(
-  `loaded — toast binding ${BINDING_TOAST} (${toastKey}). Rebind under Options → Controls`,
-);

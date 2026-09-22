@@ -51,7 +51,3 @@ api.input.registerBinding(BINDING_PAINT, ["KeyP"], {
 });
 
 api.ui.toast("Platinum — Debug → Element → Platinum, or press P (restart after patch changes)", {});
-
-console.log(
-  `loaded — ${ELEMENT_ID} type ${elementType}, collector value ${api.collector.getValueByType(elementType)}`,
-);

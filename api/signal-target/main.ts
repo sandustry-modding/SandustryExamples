@@ -20,5 +20,3 @@ function applySignalInput(structure: unknown, input: unknown) {
 for (const structureType of HEAT_CANNON_TYPES) {
   api.signals.targets.register(structureType, applySignalInput);
 }
-
-console.log(`loaded — signals.targets.register for ${HEAT_CANNON_TYPES.length} heat cannons`);

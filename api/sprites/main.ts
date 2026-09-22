@@ -11,7 +11,6 @@ async function main() {
   const loaded = sprite !== undefined;
 
   api.ui.toast(`Sprites — loadFromMod ${loaded ? "ok" : "failed"}`, {});
-  console.log(`loaded — sprites.getById(${SPRITE_ID})`, loaded ? "present" : "missing");
 }
 
 void main();

@@ -24,5 +24,3 @@ function registerUi() {
 
 installTailwind();
 registerUi();
-
-console.log("loaded — Alt+E toggles the overlay");

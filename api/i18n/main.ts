@@ -9,5 +9,3 @@ api.i18n.register("en", {
 });
 
 api.ui.toast(api.i18n.t(GREETING_KEY), {});
-
-console.log(`loaded — i18n.t(${GREETING_KEY}) = ${api.i18n.t(GREETING_KEY)}`);

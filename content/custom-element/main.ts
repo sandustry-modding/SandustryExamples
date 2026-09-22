@@ -26,5 +26,3 @@ const { elementType } = api.elements.register({
 api.discoveries.addElementByType(elementType);
 
 api.ui.toast("Custom Element — Debug → Element → Spark Dust", {});
-
-console.log(`loaded — elements.register(${ELEMENT_ID}) type ${elementType}`);

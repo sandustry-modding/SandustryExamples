@@ -31,5 +31,3 @@ api.input.registerBinding(BINDING_TELEPORT, ["KeyZ"], {
 const teleportKey = api.input.getDisplayKey(BINDING_TELEPORT, "Z");
 
 api.ui.toast(`Player Teleport — press ${teleportKey} at the cursor`, {});
-
-console.log(`loaded — player.setPositionAtWorld on ${BINDING_TELEPORT} (${teleportKey})`);

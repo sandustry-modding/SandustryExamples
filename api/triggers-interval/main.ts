@@ -18,5 +18,3 @@ api.triggers.register(TRIGGER_ID, {
 });
 
 api.ui.toast("Triggers Interval — open console for heartbeat logs", {});
-
-console.log(`loaded — triggers.register(${TRIGGER_ID}) every ${INTERVAL_TICKS} ticks`);
