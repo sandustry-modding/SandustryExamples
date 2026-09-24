@@ -2,8 +2,8 @@
 
 Spawn buttons are in the overlay.
 
-| Folder | Try this | API |
+| Sample | Try this | API |
 | --- | --- | --- |
-| `entities/` | Overlay: spawn a shinelet | `api.entities` |
-| `projectiles/` | Overlay: spawn a pellet | `api.projectiles` |
-| `pickups/` | Overlay: spawn an orb | `api.pickups` |
+| `entities.ts` | Overlay: spawn a shinelet | `api.entities` |
+| `projectiles.ts` | Overlay: spawn a pellet | `api.projectiles` |
+| `pickups.ts` | Overlay: spawn an orb | `api.pickups` |

@@ -2,8 +2,8 @@
 
 This is the template gallery mod.
 Its id is `sandustry-modding.examples`.
-Each folder is one Sandkit sample.
-Copy a folder into your mod when you want that sample.
+Each file in a category is one Sandkit sample.
+Copy that file into your mod when you want that sample.
 
 ## Open the gallery
 
@@ -37,7 +37,8 @@ Buttons in the overlay run samples that change the world.
 
 Samples sit in category folders.
 Each category has a README.
-Each sample folder has `register.ts`.
+A sample with one file is `name.ts` in that category.
+`ui/overlay/` and `host/worker-api/` stay folders because each has more than one file.
 `main.ts` only checks `isEnabled()` and calls `register()`.
 Do not add other `.ts` files next to `main.ts`.
 `shared/` holds ids and overlay state for every sample.

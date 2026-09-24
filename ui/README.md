@@ -3,23 +3,23 @@
 Press **Alt+E** unless the row names another key.
 The overlay shows status lines and action buttons for the other groups.
 
-| Folder | Try this | API |
+| Sample | Try this | API |
 | --- | --- | --- |
 | `overlay/` | **Alt+E** | `api.ui.inject` |
-| `management/` | **F1** Examples row | Management menu button |
-| `input/` | Press **T** | `api.input.registerBinding` |
-| `toast/` | Press **Y** | `api.ui.toast` |
-| `prompt/` | Press **U** | `api.ui.prompt` |
-| `i18n/` | Overlay greeting | `api.i18n` |
-| `sprites/` | Overlay: sprite loaded | `api.sprites.loadFromMod` |
-| `regions/` | Hotbar label “Examples” | `api.ui.regions.mount` |
-| `hotbar/` | Overlay: bank count | `api.ui.hotbar` |
-| `components/` | Panel and buttons in the overlay | `api.ui.components` |
-| `navigation/` | Focus scope while the overlay is open | `api.ui.navigation` |
-| `overrides/` | Resources HUD stays as-is | `api.ui.overrides` |
-| `scene/` | Overlay: active scene | `api.scene` |
-| `sound/` | Overlay: Play click | `api.sound` |
-| `effects/` | Overlay: particles at the player | `api.effects` |
-| `rendering/` | Overlay: cell size | `api.rendering` |
-| `lights/` | Overlay: flash a light | `api.lights` |
-| `retro-game/` | Retro Console → Noise Test | `sandkit.engine.api.retroConsole` |
+| `management.ts` | **F1** Examples row | Management menu button |
+| `input.ts` | Press **T** | `api.input.registerBinding` |
+| `toast.ts` | Press **Y** | `api.ui.toast` |
+| `prompt.ts` | Press **U** | `api.ui.prompt` |
+| `i18n.ts` | Overlay greeting | `api.i18n` |
+| `sprites.ts` | Overlay: sprite loaded | `api.sprites.loadFromMod` |
+| `regions.ts` | Hotbar label “Examples” | `api.ui.regions.mount` |
+| `hotbar.ts` | Overlay: bank count | `api.ui.hotbar` |
+| `components.ts` | Panel and buttons in the overlay | `api.ui.components` |
+| `navigation.ts` | Focus scope while the overlay is open | `api.ui.navigation` |
+| `overrides.ts` | Resources HUD stays as-is | `api.ui.overrides` |
+| `scene.ts` | Overlay: active scene | `api.scene` |
+| `sound.ts` | Overlay: Play click | `api.sound` |
+| `effects.ts` | Overlay: particles at the player | `api.effects` |
+| `rendering.ts` | Overlay: cell size | `api.rendering` |
+| `lights.ts` | Overlay: flash a light | `api.lights` |
+| `retro-game.ts` | Retro Console → Noise Test | `sandkit.engine.api.retroConsole` |
