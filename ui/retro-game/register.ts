@@ -1,0 +1,44 @@
+const WIDTH = 160;
+const HEIGHT = 100;
+
+/** Stable hash noise in 0..1. */
+function noise(x: number, y: number, seed: number): number {
+  const n = Math.sin(x * 12.9898 + y * 78.233 + seed * 0.017) * 43758.5453;
+  return n - Math.floor(n);
+}
+
+/** Retro Console demo. Input does not log. */
+export function register(): void {
+  sandkit.engine.api.retroConsole.registerGame({
+    id: "noise-test",
+    name: "Noise Test",
+    options: { width: WIDTH, height: HEIGHT },
+    init(display) {
+      display.clearScreen(false);
+      return {
+        tick: 0,
+        threshold: 0.5,
+        seed: 0,
+        animate: true,
+      };
+    },
+    update(display, state) {
+      const { width, height } = display;
+      const seed = state.animate ? state.seed + state.tick : state.seed;
+      for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+          display.drawPixel(x, y, noise(x, y, seed) < state.threshold);
+        }
+      }
+      return { ...state, tick: state.tick + 1 };
+    },
+    handleInput(_display, state, input) {
+      let { threshold, seed, animate } = state;
+      if (input.x < 0) threshold = Math.max(0.05, threshold - 0.05);
+      if (input.x > 0) threshold = Math.min(0.95, threshold + 0.05);
+      if (input.y < 0) animate = !animate;
+      if (input.y > 0) seed += 25;
+      return { ...state, threshold, seed, animate };
+    },
+  });
+}
